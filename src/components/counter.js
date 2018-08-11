@@ -10,7 +10,7 @@ class Counter extends React.Component {
   }
 
   render() {
-    const { count, countUp} = this.props
+    const { count, countUp, navigation} = this.props; 
     return (
       <View style={styles.container}>
         <Text>this is counter Component</Text>
@@ -18,7 +18,9 @@ class Counter extends React.Component {
           title="Count Up"
           onPress={countUp} />
         <Text>{count}</Text>
-        <Button title="Count Down" />
+        <Button 
+          title="Go to chat room"
+          onPress={() => navigation.navigate('ChatRoom')} />
       </View>
     );
   }
