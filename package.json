@@ -6,11 +6,15 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "eslint": "eslint  './**/*.js'",
+    "eslint:fix": "eslint --fix './**/*.js'",
+    "fix": "npm run eslint:fix"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "expo": "^29.0.0",
+    "prop-types": "^15.6.2",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
     "react-navigation": "^2.11.2",
@@ -19,5 +23,9 @@
     "redux-actions": "^2.6.1",
     "redux-axios-middleware": "^4.0.0",
     "redux-devtools-extension": "^2.13.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-plugin-react": "^7.11.1"
   }
 }
