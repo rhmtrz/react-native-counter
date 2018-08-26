@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { countUp } from "../redux/reducer/pageDataReducer"; 
 
-class Counter extends React.Component {
+class ConsultationScreen extends React.Component {
   constructor(props) {
     super(props); 
   }
@@ -14,7 +14,7 @@ class Counter extends React.Component {
     const { count, countUp, navigation} = this.props; 
     return (
       <View style={styles.container}>
-        <Text>this is counter Component</Text>
+        <Text>this is consultation screen</Text>
         <Button 
           title="Count Up"
           onPress={countUp} />
@@ -50,9 +50,9 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-Counter.PropTypes = {
+ConsultationScreen.propTypes = {
   count: PropTypes.number.isRequired, 
   countUp: PropTypes.func.isRequired, 
-  navigation: PropTypes.func.isRequired
+  navigation: PropTypes.object.isRequired
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Counter); 
+export default connect(mapStateToProps, mapDispatchToProps)(ConsultationScreen); 

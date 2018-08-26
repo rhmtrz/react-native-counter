@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
 
 
-ChatRoom.PropTypes = {
+ChatRoom.propTypes = {
   navigation: PropTypes.func.isRequired
 };
 
