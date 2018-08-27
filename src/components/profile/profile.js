@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     padding: 10,
-    marginBottom: 3,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#d6d7da',
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    
   },
   name: {
     marginLeft: 10, 

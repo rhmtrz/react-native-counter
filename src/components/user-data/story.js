@@ -36,6 +36,9 @@ class StoriesComponent extends React.Component {
   render() {
     return (
       <View style={styles.userAccount}>
+        <Text>
+          This is the Stories page ...
+        </Text>
         <View>
           <Image
             source={UserIcon}

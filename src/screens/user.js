@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     
   },
   userAccount: {
-    height: 80,
+    height: 77,
   }
 });
 

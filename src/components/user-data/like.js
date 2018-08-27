@@ -36,6 +36,9 @@ class LikedComponent extends React.Component {
   render() {
     return (
       <View style={styles.userAccount}>
+        <Text>
+          This is the Liked page ...
+        </Text>
         <View>
           <Image
             source={UserIcon}

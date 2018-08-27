@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
     width: 65,
     height: 55,
   },
-  userAccount: {
+  container: {
     flex: 1,
+  },
+  userAccount: {
     flexDirection: 'row',
     alignItems: "center",
-    backgroundColor: "white",
     padding: 10,
-    marginBottom: 3,
   },
   name: {
     marginLeft: 10, 
@@ -36,26 +36,31 @@ class BookmarkedComponent extends React.Component {
 
   render() {
     return (
-      <View style={styles.userAccount}>
-        <View>
-          <Image
-            source={UserIcon}
-            style={styles.photo}
-          />
-        </View>
-        <View style={styles.name}>
-          <Text>
-            My name is ...
-          </Text>
-          <Text>
-            My ID is ...
-          </Text>
-        </View>
-        <View style={styles.qrCode}>
-          <Image
-            source={UserIcon}
-            style={styles.qrCodeImg}
-          />
+      <View style={styles.container}>
+        <Text>
+          This is the Bookmarked page ...
+        </Text>
+        <View style={styles.userAccount}>
+          <View>
+            <Image
+              source={UserIcon}
+              style={styles.photo}
+            />
+          </View>
+          <View style={styles.name}>
+            <Text>
+              My name is ...
+            </Text>
+            <Text>
+              My ID is ...
+            </Text>
+          </View>
+          <View style={styles.qrCode}>
+            <Image
+              source={UserIcon}
+              style={styles.qrCodeImg}
+            />
+          </View>
         </View>
       </View>
     );

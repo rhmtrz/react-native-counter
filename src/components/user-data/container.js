@@ -19,11 +19,6 @@ const styles = StyleSheet.create({
   userAccount: {
     flexDirection: 'row',
     alignItems: "center",
-    backgroundColor: "white",
-    padding: 10,
-    marginBottom: 3,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#d6d7da',
   },
   tabList: {
 
@@ -31,7 +26,15 @@ const styles = StyleSheet.create({
   tabItem: {
     paddingLeft: 20,
     paddingRight: 20, 
-    backgroundColor: "red", 
+    padding: 10,
+  },
+  tabHightLighted: {
+    borderBottomWidth: 3,
+    borderBottomColor: "black",
+  }, 
+  pages: {
+    height: "100%",
+    backgroundColor: "#fff9c6",
   }
 });
 
@@ -53,22 +56,33 @@ class UserDataContainer extends React.Component {
     return (
       <View>
         <View style={styles.userAccount}>
-          <Text  
-            style={styles.tabItem}
-            onPress={() => this.onTabClicked("liked")}>Liked</Text>
-          <Text  
-            style={styles.tabItem}
-            onPress={() => this.onTabClicked("Bookmarked")}>Bookmarked</Text>
-          <Text  
-            style={styles.tabItem}
-            onPress={() => this.onTabClicked("Stories")}>Stories</Text>
+          <View  
+            style={[toggleTab === "liked" ? styles.tabHightLighted : null]}>
+            <Text 
+              style={styles.tabItem}
+              onPress={() => this.onTabClicked("liked")}>Liked</Text>
+          </View>
+          <View  
+            style={[toggleTab === "bookmarked" ? styles.tabHightLighted : null]}>
+            <Text 
+              style={styles.tabItem}
+              onPress={() => this.onTabClicked("bookmarked")}>Bookmarked</Text>
+          </View>
+          <View  
+            style={[toggleTab === "stories" ? styles.tabHightLighted : null]}>
+            <Text 
+              style={styles.tabItem}
+              onPress={() => this.onTabClicked("stories")}>Stories</Text>
+          </View>
         </View>
-        {toggleTab === "liked" ? 
-          <LikedComponent /> : null }
-        {toggleTab === "Bookmarked" ? 
-          <BookmarkedComponent /> : null }
-        {toggleTab === "Stories" ? 
-          <StoriesComponent /> : null }
+        <View style={styles.pages}>
+          {toggleTab === "liked" ? 
+            <LikedComponent /> : null }
+          {toggleTab === "bookmarked" ? 
+            <BookmarkedComponent /> : null }
+          {toggleTab === "stories" ? 
+            <StoriesComponent /> : null }
+        </View>
       </View>
     );
   }
