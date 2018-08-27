@@ -74,13 +74,17 @@ UserStack.navigationOptions = {
 }; 
 
 
-const HomeTabNavigator = createBottomTabNavigator({
+const MainTabNavigator = createBottomTabNavigator({
+  User: UserStack,
   Counter: DiscoverStack, 
   ChatRoom: HomeStack, 
   Consoletation: ConsoleStack, 
-  User: UserStack,
+  
 });
 
+MainTabNavigator.navigationOptions = {
+  header: null,
+};
 
 const store = configureStore();
 
@@ -88,7 +92,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <HomeTabNavigator />
+        <MainTabNavigator />
       </Provider>
     );
   }
