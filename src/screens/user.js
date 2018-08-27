@@ -7,6 +7,11 @@ import UserDataContainer from "../components/user-data/container";
 import { StyleSheet, Text, View } from "react-native";
 
 class UserScreen extends React.Component {
+  static navigationOptions = {
+    headerStyle: {
+      height: 5,
+    },
+  };
   constructor(props) {
     super(props); 
   }
