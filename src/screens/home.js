@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { StyleSheet, Text, View, Button,
   TextInput, } from "react-native";
 
-class ChatRoom extends React.Component {
+class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     //const { sendText, sendBot } = props;
@@ -25,7 +25,7 @@ class ChatRoom extends React.Component {
     const { inputText } = this.state; 
     return (
       <View style={styles.container}>
-        <Text>this is the chat room</Text>
+        <Text>This is Home page</Text>
         <Text>{inputText}</Text>
         <TextInput
           style={{height: 40, width: 140, borderColor: "gray", borderWidth: 1}}
@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
 
 
 
-ChatRoom.propTypes = {
+HomeScreen.propTypes = {
   navigation: PropTypes.func.isRequired
 };
 
-export default connect(null, null)(ChatRoom); 
+export default connect(null, null)(HomeScreen); 

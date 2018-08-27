@@ -5,8 +5,8 @@ import { createStackNavigator,
 
 import configureStore from "./src/redux/createStore"; 
 import { 
-  ChatRoom, 
-  Counter, 
+  HomeScreen, 
+  DiscoverScreen, 
   UserScreen, 
   ConsultationScreen } from "./src/screens"; 
 
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   UserIcon: { width: 24, height: 24 },
 });
 
-const HomeStack = createStackNavigator({ ChatRoom });
+const HomeStack = createStackNavigator({ HomeScreen });
 HomeStack.navigationOptions = {
   tabBarLabel: "Home",
   tabBarIcon: () => (
@@ -40,7 +40,7 @@ HomeStack.navigationOptions = {
   )
 }; 
 
-const DiscoverStack = createStackNavigator({ Counter });
+const DiscoverStack = createStackNavigator({ DiscoverScreen });
 DiscoverStack.navigationOptions = {
   tabBarLabel: "Discover",
   tabBarIcon: () => (
@@ -76,8 +76,8 @@ UserStack.navigationOptions = {
 
 const MainTabNavigator = createBottomTabNavigator({
   User: UserStack,
-  Counter: DiscoverStack, 
-  ChatRoom: HomeStack, 
+  DiscoverScreen: DiscoverStack, 
+  HomeScreen: HomeStack, 
   Consoletation: ConsoleStack, 
   
 });

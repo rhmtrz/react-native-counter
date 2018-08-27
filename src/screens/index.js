@@ -1,6 +1,6 @@
-import ChatRoom from "./chat-room"; 
-import Counter from "./counter"; 
+import HomeScreen from "./home"; 
+import DiscoverScreen from "./discover"; 
 import UserScreen from "./user"; 
 import ConsultationScreen from "./console";
 
-export { ChatRoom, Counter, UserScreen, ConsultationScreen }; 
+export { HomeScreen, DiscoverScreen, UserScreen, ConsultationScreen }; 
