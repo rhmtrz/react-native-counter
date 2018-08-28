@@ -1,6 +1,7 @@
 import React from "react";
 //import { connect } from "react-redux";
 //import PropTypes from "prop-types";
+import LoginByFacebook from '../login/login-fb'; 
 
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 
@@ -36,29 +37,7 @@ class LikedComponent extends React.Component {
   render() {
     return (
       <View style={styles.userAccount}>
-        <Text>
-          This is the Liked page ...
-        </Text>
-        <View>
-          <Image
-            source={UserIcon}
-            style={styles.photo}
-          />
-        </View>
-        <View style={styles.name}>
-          <Text>
-            My name is ...
-          </Text>
-          <Text>
-            My ID is ...
-          </Text>
-        </View>
-        <View style={styles.qrCode}>
-          <Image
-            source={UserIcon}
-            style={styles.qrCodeImg}
-          />
-        </View>
+        <LoginByFacebook />
       </View>
     );
   }
