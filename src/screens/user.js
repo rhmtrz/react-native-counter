@@ -1,10 +1,17 @@
 import React from "react";
 //import { connect } from "react-redux";
 //import PropTypes from "prop-types";
+import UserAccount from "../components/profile/profile"; 
+import UserDataContainer from "../components/user-data/container"; 
 
 import { StyleSheet, Text, View } from "react-native";
 
 class UserScreen extends React.Component {
+  static navigationOptions = {
+    headerStyle: {
+      height: 5,
+    },
+  };
   constructor(props) {
     super(props); 
   }
@@ -12,8 +19,10 @@ class UserScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>this is user screen</Text>
-
+        <View style={styles.userAccount}>
+          <UserAccount />
+        </View>
+        <UserDataContainer />
       </View>
     );
   }
@@ -21,11 +30,12 @@ class UserScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    
   },
+  userAccount: {
+    height: 77,
+  }
 });
 
 

@@ -5,8 +5,8 @@ import { createStackNavigator,
 
 import configureStore from "./src/redux/createStore"; 
 import { 
-  ChatRoom, 
-  Counter, 
+  HomeScreen, 
+  DiscoverScreen, 
   UserScreen, 
   ConsultationScreen } from "./src/screens"; 
 
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   UserIcon: { width: 24, height: 24 },
 });
 
-const HomeStack = createStackNavigator({ ChatRoom });
+const HomeStack = createStackNavigator({ HomeScreen });
 HomeStack.navigationOptions = {
   tabBarLabel: "Home",
   tabBarIcon: () => (
@@ -40,7 +40,7 @@ HomeStack.navigationOptions = {
   )
 }; 
 
-const DiscoverStack = createStackNavigator({ Counter });
+const DiscoverStack = createStackNavigator({ DiscoverScreen });
 DiscoverStack.navigationOptions = {
   tabBarLabel: "Discover",
   tabBarIcon: () => (
@@ -74,13 +74,17 @@ UserStack.navigationOptions = {
 }; 
 
 
-const HomeTabNavigator = createBottomTabNavigator({
-  Counter: DiscoverStack, 
-  ChatRoom: HomeStack, 
-  Consoletation: ConsoleStack, 
+const MainTabNavigator = createBottomTabNavigator({
   User: UserStack,
+  DiscoverScreen: DiscoverStack, 
+  HomeScreen: HomeStack, 
+  Consoletation: ConsoleStack, 
+  
 });
 
+MainTabNavigator.navigationOptions = {
+  header: null,
+};
 
 const store = configureStore();
 
@@ -88,7 +92,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <HomeTabNavigator />
+        <MainTabNavigator />
       </Provider>
     );
   }
