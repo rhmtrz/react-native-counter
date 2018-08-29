@@ -1,9 +1,9 @@
 import React from "react";
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
-
+import Expo from "expo"; 
 import {
-  StyleSheet, View,  Button,
+  StyleSheet, View,  Button, Text, Image,
 } from "react-native";
 
 
@@ -31,30 +31,52 @@ const styles = StyleSheet.create({
   },
 });
 
+const UserIcon = require("../../../assets/user.png");
+
 class LoginByFacebook extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: "",
+      picture: UserIcon,
+    };
   }
 
   async logInFB() {
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("293914348077706", {
-      permissions: ["public_profile"],
+      permissions: ["public_profile", "name", "picture"],
     });
     if (type === "success") {
+      const { picture, name } = await response.json();
+      this.setState({
+        picture, name
+      });
       // Get the user's name using Facebook's Graph API
       const response = await fetch(
-        `https://graph.facebook.com/me?access_token=${token}`,
+        `https://graph.facebook.com/me?access_token=${token}&fields=id,name,birthday,picture.type(large)`,
       );
-      Alert.alert(
+      alert(
         "Logged in!",
         `Hi ${(await response.json()).name}!`,
+      );
+    } else {
+      alert(
+        type
       );
     }
   }
 
   render() {
+    const { picture, name } = this.state; 
     return (
       <View style={styles.userAccount}>
+        <Text>
+          {name}
+        </Text>
+        <Image
+          source={picture}
+          style={styles.qrCodeImg}
+        />
         <Button
           onPress={this.logInFB.bind(this)}
           title="Login By Facebook"
