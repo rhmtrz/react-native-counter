@@ -1,8 +1,10 @@
 import React from "react";
-//import { connect } from "react-redux";
-//import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import PropTypes from "prop-types";
 
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import {
+  StyleSheet, Text, View, Image,
+} from "react-native";
 
 const UserIcon = require("../../../assets/user.png");
 
@@ -16,15 +18,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   userAccount: {
-    flexDirection: 'row',
+    flexDirection: "row",
     alignItems: "center",
     padding: 10,
   },
   name: {
-    marginLeft: 10, 
-  }, 
+    marginLeft: 10,
+  },
   qrCode: {
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   qrCodeImg: {
     width: 40,
@@ -33,7 +35,6 @@ const styles = StyleSheet.create({
 });
 
 class BookmarkedComponent extends React.Component {
-
   render() {
     return (
       <View style={styles.container}>
@@ -67,4 +68,4 @@ class BookmarkedComponent extends React.Component {
   }
 }
 
-export default BookmarkedComponent; 
+export default BookmarkedComponent;

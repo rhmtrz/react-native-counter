@@ -1,10 +1,10 @@
 import React from "react";
-//import { connect } from "react-redux";
-//import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import PropTypes from "prop-types";
 
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-
-const UserIcon = require("../../../assets/user.png");
+import {
+  StyleSheet, View,  Button,
+} from "react-native";
 
 
 const styles = StyleSheet.create({
@@ -13,17 +13,17 @@ const styles = StyleSheet.create({
     height: 55,
   },
   userAccount: {
-    flex: 1, 
-    flexDirection: 'row',
+    flex: 1,
+    flexDirection: "row",
     alignItems: "center",
     padding: 10,
     marginBottom: 3,
   },
   name: {
-    marginLeft: 10, 
-  }, 
+    marginLeft: 10,
+  },
   qrCode: {
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   qrCodeImg: {
     width: 40,
@@ -33,34 +33,35 @@ const styles = StyleSheet.create({
 
 class LoginByFacebook extends React.Component {
   constructor(props) {
-    super(props); 
-    
+    super(props);
   }
-  
+
   async logInFB() {
-    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('293914348077706', {
-        permissions: ['public_profile'],
-      });
-    if (type === 'success') {
+    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("293914348077706", {
+      permissions: ["public_profile"],
+    });
+    if (type === "success") {
       // Get the user's name using Facebook's Graph API
       const response = await fetch(
-        `https://graph.facebook.com/me?access_token=${token}`);
+        `https://graph.facebook.com/me?access_token=${token}`,
+      );
       Alert.alert(
-        'Logged in!',
+        "Logged in!",
         `Hi ${(await response.json()).name}!`,
       );
     }
-  };
+  }
 
   render() {
     return (
       <View style={styles.userAccount}>
         <Button
           onPress={this.logInFB.bind(this)}
-          title="Login By Facebook" />
+          title="Login By Facebook"
+        />
       </View>
     );
   }
 }
 
-export default LoginByFacebook; 
+export default LoginByFacebook;

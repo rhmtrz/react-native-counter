@@ -4,7 +4,7 @@ import React from "react";
 import UserAccount from "../components/profile/profile"; 
 import UserDataContainer from "../components/user-data/container"; 
 
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 class UserScreen extends React.Component {
   static navigationOptions = {
