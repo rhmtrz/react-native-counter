@@ -7,13 +7,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "eslint": "eslint  './**/*.js'",
-    "eslint:fix": "eslint --fix './**/*.js'",
+    "eslint": "eslint --config ./config/.eslintrc.js  './**/*.js'",
+    "eslint:fix": "eslint --config ./config/.eslintrc.js  --fix './**/*.js'",
     "fix": "npm run eslint:fix"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "expo": "^29.0.0",
+    "expokit": "1.5.0",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
@@ -26,7 +27,13 @@
     "redux-devtools-extension": "^2.13.5"
   },
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
     "eslint": "^5.4.0",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-pug": "^0.4.0"
   }
 }

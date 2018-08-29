@@ -1,23 +1,25 @@
 import React from "react";
-import { Provider } from "react-redux"; 
-import { createStackNavigator,
-  createBottomTabNavigator } from "react-navigation"; 
-
-import configureStore from "./src/redux/createStore"; 
-import { 
-  HomeScreen, 
-  DiscoverScreen, 
-  UserScreen, 
-  ConsultationScreen } from "./src/screens"; 
+import { Provider } from "react-redux";
+import {
+  createStackNavigator,
+  createBottomTabNavigator,
+} from "react-navigation";
 
 import { StyleSheet, Image } from "react-native";
+import configureStore from "./src/redux/createStore";
+import {
+  HomeScreen,
+  DiscoverScreen,
+  UserScreen,
+  ConsultationScreen,
+} from "./src/screens";
 
 
 const HomeIcon = require("./assets/home.png");
 const DiscoverIcon = require("./assets/discover.png");
 const UserIcon = require("./assets/user.png");
-const ConsoleIcon = require("./assets/consultation.png"); 
-//const ReadIcon = require("./assets/read.png");
+const ConsoleIcon = require("./assets/consultation.png");
+// const ReadIcon = require("./assets/read.png");
 
 
 const styles = StyleSheet.create({
@@ -37,8 +39,8 @@ HomeStack.navigationOptions = {
       source={HomeIcon}
       style={styles.homeIcon}
     />
-  )
-}; 
+  ),
+};
 
 const DiscoverStack = createStackNavigator({ DiscoverScreen });
 DiscoverStack.navigationOptions = {
@@ -48,8 +50,8 @@ DiscoverStack.navigationOptions = {
       source={DiscoverIcon}
       style={styles.DiscoverIcon}
     />
-  )
-}; 
+  ),
+};
 
 const ConsoleStack = createStackNavigator({ ConsultationScreen });
 ConsoleStack.navigationOptions = {
@@ -59,8 +61,8 @@ ConsoleStack.navigationOptions = {
       source={ConsoleIcon}
       style={styles.ConsoleIcon}
     />
-  )
-}; 
+  ),
+};
 
 const UserStack = createStackNavigator({ UserScreen });
 UserStack.navigationOptions = {
@@ -70,16 +72,16 @@ UserStack.navigationOptions = {
       source={UserIcon}
       style={styles.UserIcon}
     />
-  )
-}; 
+  ),
+};
 
 
 const MainTabNavigator = createBottomTabNavigator({
   User: UserStack,
-  DiscoverScreen: DiscoverStack, 
-  HomeScreen: HomeStack, 
-  Consoletation: ConsoleStack, 
-  
+  DiscoverScreen: DiscoverStack,
+  HomeScreen: HomeStack,
+  Consoletation: ConsoleStack,
+
 });
 
 MainTabNavigator.navigationOptions = {
@@ -97,5 +99,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
